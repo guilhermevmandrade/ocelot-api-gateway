@@ -32,21 +32,21 @@ Este é um projeto simples criado para estudo demonstrando o uso de API Gateway 
 ## **Como Executar**
 
 1. **Executar as APIs**:
-   - Navegue até os diretórios das APIs (`Customers.API`, `Orders.API`, `Products.API`) e execute:
+   Navegue até os diretórios das APIs (`Customers.API`, `Orders.API`, `Products.API`) e execute:
 
    ```bash
    dotnet run
    ```
 
 2. **Executar o API Gateway**:
-   - Navegue até o diretório do **ApiGateway** e execute:
+   Navegue até o diretório do **ApiGateway** e execute:
 
    ```bash
    dotnet run
    ```
 
 3. **Executar o Blazor WebAssembly**:
-   - Navegue até o diretório do **BlazorApp** e execute:
+   Navegue até o diretório do **BlazorApp** e execute:
 
    ```bash
    dotnet run
