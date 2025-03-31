@@ -1,0 +1,48 @@
+﻿@page "/orders"
+@using BlazorApp.Services
+@inject ApiService ApiService
+
+<h3>Orders</h3>
+
+@if (orders == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Customer Id</th>
+                <th>Product Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in orders)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.CustomerId</td>
+                    <td>@order.ProductId</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Order>? orders;
+
+    protected override async Task OnInitializedAsync()
+    {
+        orders = await ApiService.GetAsync<Order>("orders");
+    }
+
+    public class Order
+    {
+        public int Id { get; set; }
+        public int CustomerId { get; set; }
+        public int ProductId { get; set; }
+    }
+}
